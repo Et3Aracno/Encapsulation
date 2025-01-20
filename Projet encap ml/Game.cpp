@@ -1,6 +1,4 @@
-#include"Game.h"
-
-
+#include"Game.h";
 void Game::initP(){
 	
 	Texture txtJ;
@@ -8,7 +6,7 @@ void Game::initP(){
 	txtJ.loadFromFile("C:/Users/mluhat/Pictures/Screenshots/Capture d'écran 2024-12-09 155909.png");
 	texture_j.setTexture(txtJ);
 	textureJ.emplace_back(texture_j);
-	Joueur.push_back(Player(txtJ,"bonjour", 12, 15, 75, 41, 42));
+	Joueur.emplace_back(new Player(txtJ,"bonjour", 12, 15, 75, 41, 42));
 }
 
 
@@ -23,7 +21,7 @@ void Game::Gamerun() {
 			if (gameEvent.type == Event::Closed) {
 				this->window->close();
 			}
-			initAll();
+			initP();
 
 		}
 	}
