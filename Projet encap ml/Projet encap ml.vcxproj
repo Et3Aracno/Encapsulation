@@ -141,19 +141,23 @@
     <ClCompile Include="Ennemie.cpp" />
     <ClCompile Include="Entiter.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Key.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="objet.cpp" />
     <ClCompile Include="patrole.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Popo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chaser.h" />
     <ClInclude Include="Ennemie.h" />
     <ClInclude Include="Entiter.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Key.h" />
     <ClInclude Include="objet.h" />
     <ClInclude Include="patrole.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Popo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

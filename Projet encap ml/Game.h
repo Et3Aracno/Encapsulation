@@ -6,6 +6,8 @@
 #include "objet.h"
 #include "patrole.h"
 #include "Chaser.h"
+#include "Key.h"
+#include "Popo.h"
 #ifndef GAME_H
 #define	GAME_H
 using namespace sf;
@@ -19,19 +21,29 @@ public:
 	vector<Player> Joueur;
 	vector<Ennemie>Mob1;
 	vector<Ennemie>Mobs;
-	Texture txtJm, txtC, txtP;
-	Sprite texture_Jm ,texture_C ,texture_P;
-	Clock timermove,timerchase;
+	vector<Objet>pp_aq;
+	vector<Objet>key_aq;
+	vector<Objet>popo;
+	vector<Objet>clef;
+	Texture txtJm, txtC, txtP, txtK, txtPP;
+	Sprite texture_Jm, texture_C, texture_P,texture_PP,texture_K;
+	Clock timerchase;
 	RenderWindow* window;
+	bool PPrecup, Keyrecup = false;
 
 	void Gamerun();
 	void initAll();
 	void initP();
 	void initC();
-	void initP2();
+	void initPa();
+	void initPP();
+	void initK();
 	void coli();
-	void Pmove();
+	void coliPP();
+	void coliKey();
 	void chase();
+	void PPeffect();
+	
 
 };
 

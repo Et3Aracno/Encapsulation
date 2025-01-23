@@ -6,6 +6,6 @@ protected:
 	string nom;
 public:
 	Player(Sprite textureP, string nom_P, Vector2f positionJ);
-	void movement();
+	void movement(int a);
 
 };
