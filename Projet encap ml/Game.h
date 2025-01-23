@@ -17,10 +17,11 @@ class Game {
 public:
 	vector<Sprite> textureJ;
 	vector<Player> Joueur;
+	vector<Ennemie>Mob1;
 	vector<Ennemie>Mobs;
-	Texture txtJ, txtC, txtP;
-	Sprite texture_J ,texture_C ,texture_P;
-	Clock timermove;
+	Texture txtJm, txtC, txtP;
+	Sprite texture_Jm ,texture_C ,texture_P;
+	Clock timermove,timerchase;
 	RenderWindow* window;
 
 	void Gamerun();
@@ -30,6 +31,7 @@ public:
 	void initP2();
 	void coli();
 	void Pmove();
+	void chase();
 
 };
 

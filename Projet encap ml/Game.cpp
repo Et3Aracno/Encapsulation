@@ -1,21 +1,21 @@
 #include"Game.h"
 void Game::initP(){
 	
-	txtJ.loadFromFile("C:/Users/mluhat/Downloads/sirène.png");
-	texture_J.setTexture(txtJ);
-	Joueur.emplace_back(Player(texture_J, "J1",Vector2f(500.f,900.f)));
+	txtJm.loadFromFile("Walk knight.png");
+	texture_Jm.setTexture(txtJm);
+	Joueur.emplace_back(Player(texture_Jm, "J1",Vector2f(500.f,900.f)));
 }
 void Game::initC() {
 	
-	txtC.loadFromFile("C:/Users/mluhat/Downloads/nuage.png");
+	txtC.loadFromFile("idle chaser.png");
 	texture_C.setTexture(txtC);
 	Mobs.emplace_back(ChaserEnemy(texture_C, "méchant", Vector2f(35.f, 41.f)));
 }
 void Game::initP2() {
 	
-	txtP.loadFromFile("C:/Users/mluhat/Downloads/Bombe.png");
+	txtP.loadFromFile("walk.png");
 	texture_P.setTexture(txtP);
-	Mobs.emplace_back(PatrollingEnemy(texture_P, "méchant", Vector2f(35.f, 41.f)));
+	Mob1.emplace_back(PatrollingEnemy(texture_P, "méchant", Vector2f(35.f, 41.f)));
 }
 void Game::initAll() {
 	initP();
@@ -48,7 +48,28 @@ void Game::coli() {
 		}
 	}
 }
-
+void Game::chase() {
+	for (auto& chaser : Mobs) {
+		for (auto& player : Joueur) {
+			if ( timerchase.getElapsedTime().asMilliseconds() >= 2 and player.getSprite().getPosition().x > chaser.getSprite().getPosition().x) {
+				chaser.getSprite().move(1.f, 0.f);
+				timerchase.restart();
+			}
+			if (timerchase.getElapsedTime().asMilliseconds() >= 2 and player.getSprite().getPosition().y > chaser.getSprite().getPosition().y) {
+				chaser.getSprite().move(0.f, 1.f);
+				timerchase.restart();
+			}
+			if (timerchase.getElapsedTime().asMilliseconds() >= 2 and player.getSprite().getPosition().x < chaser.getSprite().getPosition().x) {
+				chaser.getSprite().move(-1.f, 0.f);
+				timerchase.restart();
+			}
+			if (timerchase.getElapsedTime().asMilliseconds() >= 2 and player.getSprite().getPosition().y < chaser.getSprite().getPosition().y) {
+				chaser.getSprite().move(0.f, -1.f);
+				timerchase.restart();
+			}
+		}
+	}
+}
 void Game::Gamerun() {
 	this->window = new RenderWindow(VideoMode(1920, 1080), "Steam Purgator");
 	this->window->setFramerateLimit(120);
@@ -70,6 +91,10 @@ void Game::Gamerun() {
 		for (auto& ennemie : Mobs) {
 			window->draw(ennemie.getSprite());
 		}
+		for (auto& ennemie : Mob1) {
+			window->draw(ennemie.getSprite());
+		}
+		chase();
 		coli();
 
 		window->display();
