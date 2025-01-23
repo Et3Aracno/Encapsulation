@@ -35,21 +35,23 @@ void Game::initAll() {
 	initK();
 	initPP();
 }
-//void Game::coliPP() {
-//	for (auto& j : Joueur) {
-//		auto obj = popo.begin();
-//		while (obj != popo.end())
-//			if(j.getSprite().getGlobalBounds().intersects(obj->getSprite().getGlobalBounds())) {
-//				pp_aq.emplace_back(obj);
-//				obj = popo.erase(obj);
-//				PPrecup = true;
-//			}
-//			else {
-//				obj++;
-//				PPrecup = false;
-//			}
-//		}
-//}
+void Game::coliPP() {
+	int i = 0;
+	for (auto& j : Joueur) {
+		auto obj = popo.begin();
+		while (obj != popo.end())
+			if (j.getSprite().getGlobalBounds().intersects(obj->getSprite().getGlobalBounds())) {
+				pp_aq.push_back(popo[i]);
+				obj = popo.erase(obj);
+				PPrecup = true;
+			}
+			else {
+				obj++;
+				PPrecup = false;
+			}
+		}
+	i++;
+}
 void Game::coliKey() {
 	for (auto& j : Joueur) {
 		for (auto key : clef) {
@@ -133,6 +135,7 @@ void Game::Gamerun() {
 			window->draw(ennemie.getSprite());
 		}
 		for (auto& popo : popo) {
+			coliPP();
 			if (PPrecup == false) {
 				window->draw(popo.getSprite());
 			}
