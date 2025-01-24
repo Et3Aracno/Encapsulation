@@ -10,5 +10,5 @@ protected:
 	string nom;
 	Vector2f position;
 public:
-	Objet(Sprite textureO, string nom_O,Vector2f positionO);
+	Objet(Sprite textureO,Vector2f positionO);
 };

@@ -14,5 +14,5 @@ void Player::movement(int a) {
 	}
 }
 
-Player::Player(Sprite textureP, string nom_P, Vector2f positionJ) : position(positionJ), nom(nom_P), Entity(textureP) {
+Player::Player(Sprite textureP, Vector2f positionJ) : position(positionJ), Entity(textureP) {
 };

@@ -4,5 +4,5 @@
 class Key : public Objet {
 
 public:
-	Key(Sprite textureO, string nom_O, Vector2f positionO);
+	Key(Sprite textureO, Vector2f positionO);
 };

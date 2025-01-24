@@ -5,7 +5,7 @@ protected:
 	Vector2f position;
 	string nom;
 public:
-	Player(Sprite textureP, string nom_P, Vector2f positionJ);
+	Player(Sprite textureP, Vector2f positionJ);
 	void movement(int a);
 
 };
