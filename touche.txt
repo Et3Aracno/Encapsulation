@@ -1,0 +1,5 @@
+z = avancer
+q = aller à gauche
+s = reculer
+d = aller à dorite
+e = utiliser la potions aquise
