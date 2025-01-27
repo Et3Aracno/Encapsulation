@@ -202,6 +202,11 @@ void Game::drawM() {
 			
 			case 'P':
 			{
+				RectangleShape sol(Vector2f(80, 99));
+				sol.setPosition(Vector2f(80 * j, 99 * i));
+				sol.setTexture(&txtS);
+				sol.setPosition(j * Width, i * Height);
+				solv.push_back(sol);
 				Player joueur(texture_Jm, Vector2f(80 * j, 99 * i));
 				joueur.getSprite().setPosition(j * Width, i * Height);
 				Joueur.push_back(joueur);
@@ -209,6 +214,11 @@ void Game::drawM() {
 			}
 			case 'R':
 			{
+				RectangleShape sol(Vector2f(80, 99));
+				sol.setPosition(Vector2f(80 * j, 99 * i));
+				sol.setTexture(&txtS);
+				sol.setPosition(j * Width, i * Height);
+				solv.push_back(sol);
 				PatrollingEnemy patrouilleur(texture_P, Vector2f(80 * j, 99 * i));
 				patrouilleur.getSprite().setPosition(j * Width, i * Height);
 				Mob1.push_back(patrouilleur);
@@ -216,6 +226,11 @@ void Game::drawM() {
 			}
 			case'C':
 			{
+				RectangleShape sol(Vector2f(80, 99));
+				sol.setPosition(Vector2f(80 * j, 99 * i));
+				sol.setTexture(&txtS);
+				sol.setPosition(j * Width, i * Height);
+				solv.push_back(sol);
 				ChaserEnemy chasseur(texture_C, Vector2f(80 * j, 99 * i));
 				chasseur.getSprite().setPosition(j * Width, i * Height);
 				Mobs.push_back(chasseur);
@@ -234,13 +249,23 @@ void Game::drawM() {
 				
 			case 'K':
 			{
-				Key cle(texture_K, Vector2f(80 * j, 99 * i));
+				RectangleShape sol(Vector2f(80, 99));
+				sol.setPosition(Vector2f(80 * j, 99 * i));
+				sol.setTexture(&txtS);
+				sol.setPosition(j * Width, i * Height);
+				solv.push_back(sol);
+				Key cle(texture_K, Vector2f(80 * j+200, 99 * i-300));
 				cle.getSprite().setPosition(j * Width, i * Height);
 				clef.push_back(cle);
 				break;
 			}
 			case'E':
 			{
+				RectangleShape sol(Vector2f(80, 99));
+				sol.setPosition(Vector2f(80 * j, 99 * i));
+				sol.setTexture(&txtS);
+				sol.setPosition(j * Width, i * Height);
+				solv.push_back(sol);
 				Popo potion(texture_PP, Vector2f(80 * j, 99 * i));
 				potion.getSprite().setPosition(j * Width, i * Height);
 				popo.push_back(potion);
