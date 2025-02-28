@@ -9,6 +9,8 @@ Votre objectif est de survivre et atteindre la sortie sans tomber dans les pièg
 
 Développé en C++ avec SFML, ce projet met en avant des mécaniques de déplacement précis, de gestion des obstacles et de résolution de niveaux.
 
+Projet Non fini par manque de temps .
+
 🎮 FONCTIONNALITÉS
 
 ✔ Déplacement fluide du personnage 🎮
@@ -53,6 +55,7 @@ g++ -o encapsulation main.cpp -lsfml-graphics -lsfml-window -lsfml-system
 
 📸 CAPTURES D'ÉCRAN
 
+![image](https://github.com/user-attachments/assets/fbcecc19-c32d-41a8-a6b4-a5351fd7c846)
 
 
 
