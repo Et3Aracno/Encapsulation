@@ -14,13 +14,8 @@ Projet Non fini par manque de temps .
 🎮 FONCTIONNALITÉS
 
 ✔ Déplacement fluide du personnage 🎮
-✔ Niveaux avec obstacles et pièges ⚠️
-✔ Animations et gestion des collisions 🎥
-✔ Graphismes et effets sonores immersifs 🎨🔊
-✔ Difficulté progressive 📈
-✔ Système de checkpoints et de réapparition 🔄
-
-🛠 INSTALLATION
+✔ Gestion des collisions 🎥
+✔ Graphismes immersifs 🎨🔊
 
 📌 PRÉREQUIS
 
@@ -30,20 +25,6 @@ SFML installé sur votre machine
 
 Un compilateur C++ compatible (GCC, Clang, MSVC, etc.)
 
-⚙️ COMPILATION & EXÉCUTION
-
-1️⃣ Cloner le repo :
-
-git clone https://github.com/VotreNomUtilisateur/Encapsulation.git
-cd Encapsulation
-
-2️⃣ Compiler le programme avec g++ :
-
-g++ -o encapsulation main.cpp -lsfml-graphics -lsfml-window -lsfml-system
-
-3️⃣ Exécuter le jeu :
-
-./encapsulation
 
 🕹 COMMANDES
 
